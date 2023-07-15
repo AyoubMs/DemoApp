@@ -19,12 +19,22 @@ public class AddServlet extends HttpServlet
 		
 		int k = i + j;
 		
-		req.setAttribute("k", k);
+//		req.setAttribute("k", k);
+//		
+//		try {
+//			RequestDispatcher rd = req.getRequestDispatcher("sq");
+//			rd.forward(req, res);
+//		} catch (Exception err) {
+//			err.printStackTrace();
+//		}
 		
-		try {
-			RequestDispatcher rd = req.getRequestDispatcher("sq");
-			rd.forward(req, res);
-		} catch (Exception err) {
+		try
+		{
+			PrintWriter out = res.getWriter();
+			out.println("<html><body bgcolor='cyan'>");
+			out.println("Output: " + k);
+			out.println("</body></html>");
+		} catch(Exception err) {
 			err.printStackTrace();
 		}
 	}
